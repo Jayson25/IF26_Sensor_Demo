@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IF26 Sensor Demo</string>
+    <string name="accelerometer">Accelerometer</string>
+    <string name="light">Light</string>
+    <string name="stepcounter">StepCounter</string>
+    <string name="shake_the_phone_for_a_suprise_please_do_not_abuse_during_the_presentation">Shake the phone for a suprise. Please do not abuse during the presentation ;)</string>
+</resources>
