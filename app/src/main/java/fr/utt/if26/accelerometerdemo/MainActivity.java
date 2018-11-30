@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private Sensor stepCounter;
     private View view;
 
+    
     //coordinates of the accelerometer
     private long accLastUpdate = 0;
     private long lightLastUpdate = 0;
