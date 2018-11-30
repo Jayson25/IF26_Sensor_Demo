@@ -1,6 +1,6 @@
 # IF26_Sensor_Demo
 
-<a href="url"><img src="https://cdn.discordapp.com/attachments/305460480502267904/518144076235669674/Screenshot_20181130-201919.jpg" align="left" height="50%" width="50%" ></a>
+<a href="url"><img src="https://media.discordapp.net/attachments/305460480502267904/518176564035452930/Screenshot_20181130-222815.jpg?width=447&height=794" align="left" height="50%" width="50%" ></a>
 
 ## What is this project
 
