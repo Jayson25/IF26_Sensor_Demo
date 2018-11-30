@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements SensorEventListener{
 
-    private SensorManager sensoManager;
+    private SensorManager sensorManager;
     private Sensor accelerometer;
     private Sensor lightSensor;
     private Sensor stepCounter;
@@ -55,18 +55,18 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         stepCounterDataLabel = findViewById(R.id.stepCounterDataLabel);
 
         //tells the application to access to the system's resources
-        sensoManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         //tells the application to listen to the accelerometer values
-        accelerometer = sensoManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         //tells the application to read light sensor value
-        lightSensor = sensoManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
         //tells the application to read the number of steps
-        stepCounter = sensoManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+        stepCounter = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
 
         //start sensor listener for the accelerometer
-        sensoManager.registerListener(this, accelerometer, sensoManager.SENSOR_DELAY_NORMAL);
-        sensoManager.registerListener(this, lightSensor, sensoManager.SENSOR_DELAY_NORMAL);
-        sensoManager.registerListener(this, stepCounter, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, accelerometer, sensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, lightSensor, sensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, stepCounter, SensorManager.SENSOR_DELAY_NORMAL);
 
         last_x = 0;
         last_y = 0;
@@ -78,14 +78,14 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     protected void onPause(){
         super.onPause();
-        sensoManager.unregisterListener(this);
+        sensorManager.unregisterListener(this);
     }
 
     protected void onResume(){
         super.onResume();
-        sensoManager.registerListener(this, accelerometer, sensoManager.SENSOR_DELAY_NORMAL);
-        sensoManager.registerListener(this, lightSensor, sensoManager.SENSOR_DELAY_NORMAL);
-        sensoManager.registerListener(this, stepCounter, SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, accelerometer, sensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, lightSensor, sensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(this, stepCounter, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     @Override
