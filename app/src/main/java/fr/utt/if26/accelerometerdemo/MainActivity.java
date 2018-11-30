@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     private Sensor lightSensor;
     private Sensor stepCounter;
     private View view;
-    
+
     //coordinates of the accelerometer
     private long accLastUpdate = 0;
     private long lightLastUpdate = 0;
@@ -107,7 +107,10 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
                 //calculate the speed of the shake
                 float shakeSpeed = Math.abs(x + y + z - last_x - last_y - last_z)/diffTime * 10000;
 
-                accDataLabel.setText("Accelerometer: \n\tx:" + x + "\n\ty:" + y + "\n\t  z:" + z+ "\n\tShake speed: " + shakeSpeed);
+                accDataLabel.setText("Accelerometer: \n\tx:" + (Math.round(x * 100.0)/100.0) +
+                        "\n\ty:" + (Math.round(y * 100.0)/100.0) +
+                        "\n\tz:" + (Math.round(z * 100.0)/100.0) +
+                        "\n\tShake speed: " + (Math.round(shakeSpeed * 10.0)/10.0));
 
                 //if the speed of our shake is more than 300 threshold
                 if (shakeSpeed > SHAKE_TRESHOLD) {
@@ -144,7 +147,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             if (diffTime > 100){
 
-                String intensity = "Light intensity: " + light;
+                String intensity = "Light intensity: " + (int)light;
                 lightLastUpdate = currentTime;
 
                 //Changing the color of the background depending on the light intensity of the environment
@@ -173,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
             if (diffTime > 100){
 
-                stepCounterDataLabel.setText("Step counter: " + steps);
+                stepCounterDataLabel.setText("Step counter: " + (int)steps);
                 scLastUpdate = currentTime;
             }
         }
